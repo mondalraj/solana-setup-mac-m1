@@ -291,19 +291,34 @@ anchor test
 ```
 *Note*: Be sure you **don't** have solana-test-validator running anywhere else it'll conflict w/ Anchor.
 
+Another way to run this is - 
+```bash
+solana-test-validator
+```
+Run this command in other terminal, this set up a local node in the chain locally, then run-
+```bash
+anchor test --skip-local-validator
+```
+
 This may take a while the first time you run it! As long as you get the green words the bottom that say "1 passing" you're good to go!! Keep us posted in the Discord if you run into issues here.
 
 ![Untitled](https://i.imgur.com/V35KchA.png)
 
 <details>
 <summary>Having problems with <code>Error: failed to send transaction: Transaction simulation failed: Attempt to load a program that does not exist</code>?</summary>
-If you get this error, this most likely means you forgot to add your Program Id in both your <code>.toml</code> file and <code>.rs</code> file! Go ahead and grab your ID again and verify it's updated in the appropriate spots :).
+If you get this error, this most likely means you forgot to add your Program Id in both your <code>.toml</code> file and <code>.rs</code> file! Go ahead and grab your ID again and verify it's updated in the appropriate spots :). 
+Refer this - https://solana.stackexchange.com/questions/5570/error-the-declared-program-id-does-not-match-the-actual-program-id
 </details>
 
 <details>
   <summary>Having problems with <code>Insufficient funds</code> or <code>Error: Deploying program failed: Error processing Instruction 1: custom program error: 0x1 There was a problem deploying: Output { status: ExitStatus(unix_wait_status(256)), stdout: "", stderr: "" }</code>?</summary>
   
-This means that you don't have enough SOL. Airdrop some SOL to your locahost:
+This means that you don't have enough SOL. Airdrop some SOL to your locahost: 
+First run - 
+```bash
+solana-test-validator
+```
+then,
 
 ```bash
 solana airdrop 2
