@@ -320,8 +320,13 @@ This may take a while the first time you run it! As long as you get the green wo
 
 <details>
 <summary>Having problems with <code>Error: failed to send transaction: Transaction simulation failed: Attempt to load a program that does not exist</code>?</summary>
-If you get this error, this most likely means you forgot to add your Program Id in both your <code>.toml</code> file and <code>.rs</code> file! Go ahead and grab your ID again and verify it's updated in the appropriate spots :). 
-Refer this - https://solana.stackexchange.com/questions/5570/error-the-declared-program-id-does-not-match-the-actual-program-id
+If you get this error, this most likely means you forgot to add your Program Id in both your <code>.toml</code> file and <code>.rs</code> file! Go ahead and grab your ID again and verify it's updated in the appropriate spots :).   
+  
+To check the current program keypair ID - `solana-keygen pubkey target/deploy/myepicproject-keypair.json`  
+Check that pubkey returning from this command is same as !declare_id() and ID in Anchor.toml file
+  
+Refer this - https://solana.stackexchange.com/questions/5570/error-the-declared-program-id-does-not-match-the-actual-program-id  
+
 </details>
 
 <details>
