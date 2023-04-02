@@ -51,6 +51,20 @@ Solana setup has gotten a whole lot easier! All you need to download and install
 ```bash
 sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
 ```
+This will install the stable version, but it may or may not be compatible with anchor and rust 
+In case it gives some error while running try - 
+```bash
+sh -c "$(curl -sSfL https://release.solana.com/v1.14.17/install)" or v1.15.2
+```
+Refer to Official Solana Labs Docs - https://docs.solana.com/cli/install-solana-cli-tools#macos--linux 
+
+If you are updating or changing the solana version without uninstalling the current version try to first remove the cache - 
+```bash
+rm -rf ~/.cache/solana/*
+```
+
+If you have already run `anchor test` with previous versions or your app is already build run - 
+`cargo clean` and then you can use `anchor test` to run your smart contracts locally
 
 This will take a minute or two depending on your internet speed. Once it finishes, you should see something like this in your terminal:
 ```bash
